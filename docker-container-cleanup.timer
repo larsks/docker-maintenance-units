@@ -1,0 +1,9 @@
+[Unit]
+Description=Clean up docker containers daily
+
+[Timer]
+OnCalendar=daily
+
+[Install]
+WantedBy=timers.target
+
