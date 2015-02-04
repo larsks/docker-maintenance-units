@@ -1,7 +1,9 @@
 [Unit]
 Description=Clean up old docker containers
+Requires=docker.service
+After=docker.service
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/docker-container-cleanup
+ExecStart=@sbindir@/docker-container-cleanup
 

@@ -1,9 +1,9 @@
 [Unit]
 Description=Clean up dangling docker images
-Requires=docker-container-cleanup.service
-After=docker-container-cleanup.service
+Requires=docker.service docker-container-cleanup.service
+After=docker.service docker-container-cleanup.service
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/docker-image-cleanup
+ExecStart=@sbindir@/docker-image-cleanup
 
