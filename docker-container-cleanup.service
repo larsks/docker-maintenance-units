@@ -5,5 +5,4 @@ After=docker.service
 
 [Service]
 Type=oneshot
-ExecStart=@sbindir@/docker-container-cleanup
-
+ExecStart=/usr/bin/docker container prune -f
